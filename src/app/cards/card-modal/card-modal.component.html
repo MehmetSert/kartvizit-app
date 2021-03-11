@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>{{ data ? 'Kartviziti Düzenle' : 'Yeni Kartvizit' }}</h2>
+<mat-dialog-content class="mat-typography">
+  <div *ngIf="showSpinner">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    <br>
+  </div>
+  <form [formGroup]="cardForm">
+    <mat-form-field class="example-full-width">
+      <mat-label>Başlık</mat-label>
+      <input matInput formControlName="title">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Ad Soyad veya Firma Adı</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Telefon</mat-label>
+      <input matInput formControlName="phone">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>E-posta Adresi</mat-label>
+      <input matInput formControlName="email">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Adres</mat-label>
+      <textarea matInput formControlName="address"></textarea>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <div class="flex-grow-1 text-start" *ngIf="data">
+    <button mat-stroked-button color="warn" (click)="deleteCard()" [disabled]="showSpinner">Sil</button>
+  </div>
+  <div>
+    <button mat-button mat-dialog-close>Vazgeç</button>
+    <button mat-flat-button color="primary" (click)="data ? updateCard() : addCard()" [disabled]="cardForm.invalid || showSpinner">{{ data ? 'Düzenle' : 'Ekle' }}</button>
+  </div>
+</mat-dialog-actions>
