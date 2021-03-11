@@ -14,7 +14,7 @@
       <div class="col-12" *ngIf="!cardService.cards">
         <span>Kartvizitler yükleniyor. Lütfen bekleyiniz.</span>
       </div>
-      <div class="col-12" *ngIf="cardService.cards.length === 0">
+      <div class="col-12" *ngIf="cardService.cards?.length === 0">
         <span>Henüz kartvizit eklemediniz. <a class="text-primary" (click)="openAddCardModal()">Buraya tıklayarak</a> ilk kartvizitinizi ekleyebilirsiniz.</span>
       </div>
       <div class="col-12 col-md-4 col-lg-3" *ngFor="let card of cardService.cards">
