@@ -2,6 +2,8 @@
 
 Video serisine şu adresten ulaşabilirsiniz: https://www.youtube.com/watch?v=47VweSbFHWE&list=PLSM07tMt8osNHLM_yfUnWafZ61m4FIbw1
 
+Projeyide şuradan inceleyebilirsiniz: https://kartvizit-app.netlify.app/
+
 ----------------------------
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.2.
